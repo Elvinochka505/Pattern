@@ -1,3 +1,4 @@
+package ru.netology.delivery.data;
 import com.github.javafaker.Faker;
 import lombok.Value;
 
@@ -18,7 +19,7 @@ public class DataGenerator {
     public static String generateCity() {
         // TODO: добавить логику для объявления переменной city и задания её значения, генерацию можно выполнить
         // с помощью Faker, либо используя массив валидных городов и класс Random
-        String[] cities = new String[]{"Майкоп", "Горно-Алтайск", "Уфа", "Улан-Удэ", "Маачкала", "Магас", "Нальчик"};
+        String[] cities = new String[]{"Майкоп", "Горно-Алтайск", "Уфа", "Улан-Удэ", "Махачкала", "Магас", "Нальчик"};
         return cities[new Random().nextInt(cities.length)];
     }
 

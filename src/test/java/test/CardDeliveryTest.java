@@ -4,6 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
+import ru.netology.delivery.data.DataGenerator;
+
 
 
 import java.time.Duration;
@@ -13,7 +15,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 
-class DeliveryTest {
+class CardDeliveryTest {
 
     @BeforeEach
     void setup() {
@@ -34,6 +36,7 @@ class DeliveryTest {
         $("[data-test-id=name] input").setValue(validUser.getName());
         $("[data-test-id=phone] input").setValue(validUser.getPhone());
         $("[data-test-id=agreement]").click();
+        $(Selectors.byText("Запланировать")).click();
         $(Selectors.withText("Успешно")).shouldBe(visible, Duration.ofSeconds(15));
         $("[data-test-id='success-notification] .notification__content")
                 .shouldHave(exactText("Встреча успешно запланирована на " + firstMeetingDate))
